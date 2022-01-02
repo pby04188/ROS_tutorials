@@ -50,5 +50,5 @@ ros2 launch turtle_circle turtlecircle.launch.py
 ```
 이후 "ros2 topic pub" 명령어를 통해 "/rad_vel_dir" 토픽을 발행할 수 있다.
 ```
-ros2 topic pub --once /rad_val_dir msg_srv_action_interface/msg/RVD "{radius: 1.0, velocity: 2.0, direction: True}"
+ros2 topic pub --once /rad_vel_dir msg_srv_action_interface/msg/RVD "{radius: 1.0, velocity: 2.0, direction: True}"
 ```
