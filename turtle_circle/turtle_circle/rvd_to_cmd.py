@@ -22,7 +22,7 @@ class RvdToCmd(Node):
 
         self.rvd_sub = self.create_subscription(
             RVD,
-            'rad_val_dir',
+            'rad_vel_dir',
             self.subscribe_rvd_message,
             qos_profile)
         
