@@ -52,3 +52,4 @@ ros2 launch turtle_circle turtlecircle.launch.py
 ```
 ros2 topic pub --once /rad_vel_dir msg_srv_action_interface/msg/RVD "{radius: 1.0, velocity: 2.0, direction: True}"
 ```
+(시계반대방향일 때 direction : )
