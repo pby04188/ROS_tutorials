@@ -127,4 +127,4 @@ colcon build --symlink-install --packages-select dwa_local_planner
 ros2 launch dwa_local_planner dwa.launch.py
 ```
 
-waypoints를 변경하고 싶으면 파라미터 파일 [waypoints.yaml](https://github.com/pby04188/ROS_tutorials/blob/810375a6239446005de0106ca017b2ac2094cbae/dwa_local_planner/param/waypoints.yaml) 
+waypoints를 변경하고 싶으면 파라미터 파일 [waypoints.yaml](https://github.com/pby04188/ROS_tutorials/blob/810375a6239446005de0106ca017b2ac2094cbae/dwa_local_planner/param/waypoints.yaml) 을 다시 빌드하여 사용하면 된다.
