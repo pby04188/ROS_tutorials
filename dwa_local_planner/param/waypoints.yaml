@@ -2,4 +2,6 @@
   ros__parameters:
     num_waypoints: 1
     waypoint_1: [8.58, 2.5]
-    # waypoints: [[8.58, 2.5], [2.5, 8.58], [2.5, 2.5], [8.58, 8.58]]
+    waypoint_2: [2.5, 8.58]
+    waypoint_3: [2.5, 2.5]
+    waypoint_4: [8.58, 8.58]
