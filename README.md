@@ -17,7 +17,7 @@ ros2 pkg create  msg_srv_action_interface --build-type ament_cmake
 cd msg_srv_action_interface
 mkdir msg srv action
 ```
-이후 [package.xml](https://github.com/pby04188/ROS_tutorials/blob/207e3afbc35bbecd63247a714cbd63cc47343313/msg_srv_action_interface/package.xml), [CMakeLists.txt](https://github.com/pby04188/ROS_tutorials/blob/207e3afbc35bbecd63247a714cbd63cc47343313/msg_srv_action_interface/CMakeLists.txt) 파일을 변경한 뒤, msg 폴더 안에 [RVD.msg](https://github.com/pby04188/ROS_tutorials/blob/207e3afbc35bbecd63247a714cbd63cc47343313/msg_srv_action_interface/msg/RVD.msg) 를 생성한다.
+이후 [package.xml](msg_srv_action_interface/package.xml), [CMakeLists.txt](msg_srv_action_interface/CMakeLists.txt) 파일을 변경한 뒤, msg 폴더 안에 [RVD.msg](msg_srv_action_interface/msg/RVD.msg) 를 생성한다.
 
 ### 2) turtle_circle 패키지 생성
 
@@ -26,7 +26,7 @@ cd ~/robot_ws/src
 ros2 pkg create turtle_circle --build-type ament_python dependencies rclpy std_msgs
 cd turtle_circle
 ```
-이후 [package.xml](https://github.com/pby04188/ROS_tutorials/blob/207e3afbc35bbecd63247a714cbd63cc47343313/turtle_circle/package.xml), [setup.py](https://github.com/pby04188/ROS_tutorials/blob/207e3afbc35bbecd63247a714cbd63cc47343313/turtle_circle/setup.py) 파일을 변경한 뒤, turtle_circle 폴더 안에 [rvd_to_cmd.py](https://github.com/pby04188/ROS_tutorials/blob/207e3afbc35bbecd63247a714cbd63cc47343313/turtle_circle/turtle_circle/rvd_to_cmd.py) 를 생성한다.
+이후 [package.xml](turtle_circle/package.xml), [setup.py](turtle_circle/setup.py) 파일을 변경한 뒤, turtle_circle 폴더 안에 [rvd_to_cmd.py](turtle_circle/turtle_circle/rvd_to_cmd.py) 를 생성한다.
 
 ### 3) launch 파일 작성
 해당 작업을 수행하기 위해선 "/turtlesim_node" 노드와 "/rvd_to_cmd" 노드를 모두 실행시켜야 하는데 이 때 "ros2 run" 명령어를 이용하면 명령어를 2번 입력해야 하기 때문에 비효율적이다. 따라서, 두 노드를 한 번에 실행시키기 위해 "ros2 launch" 를 이용한다.
@@ -35,7 +35,7 @@ cd ~/robot_ws/src/turtle_circle
 mkdir launch
 cd launch
 ```
-이후 [turtlecircle.launch.py](https://github.com/pby04188/ROS_tutorials/blob/207e3afbc35bbecd63247a714cbd63cc47343313/turtle_circle/launch/turtlecircle.launch.py) 를 생성한다.
+이후 [turtlecircle.launch.py](turtle_circle/launch/turtlecircle.launch.py) 를 생성한다.
 
 
 ### 4) 빌드
@@ -79,11 +79,11 @@ ros2 pkg create dwa_local_planner --build-type ament_python dependencies rclpy s
 cd dwa_local_planner
 ```
 
-이후 [package.xml](https://github.com/pby04188/ROS_tutorials/blob/d4f3616d23c17cfebbd87c0b76fada576634d0b0/dwa_local_planner/package.xml), [setup.py](https://github.com/pby04188/ROS_tutorials/blob/d4f3616d23c17cfebbd87c0b76fada576634d0b0/dwa_local_planner/setup.py) 파일을 수정한 뒤, dwa_local_planner 폴더 안에 [dwa.py](https://github.com/pby04188/ROS_tutorials/blob/d4f3616d23c17cfebbd87c0b76fada576634d0b0/dwa_local_planner/dwa_local_planner/dwa.py) 를 생성한다.
+이후 [package.xml](dwa_local_planner/package.xml), [setup.py](dwa_local_planner/setup.py) 파일을 수정한 뒤, dwa_local_planner 폴더 안에 [dwa.py](dwa_local_planner/dwa_local_planner/dwa.py) 를 생성한다.
 
 ### 2) parameter 파일 생성
 
-[dwa.py](https://github.com/pby04188/ROS_tutorials/blob/d4f3616d23c17cfebbd87c0b76fada576634d0b0/dwa_local_planner/dwa_local_planner/dwa.py) 에서 turtle2의 waypoints 정보를 파라미터로 설정하였다. 따라서, 이 파라미터의 정보를 담고 있는 파일을 생성한다.
+[dwa.py](dwa_local_planner/dwa_local_planner/dwa.py) 에서 turtle2의 waypoints 정보를 파라미터로 설정하였다. 따라서, 이 파라미터의 정보를 담고 있는 파일을 생성한다.
 
 ```
 cd ~/robot_ws/src/dwa_local_planner
@@ -91,7 +91,7 @@ mkdir param
 cd param
 ```
 
-이후 [waypoints.yaml](https://github.com/pby04188/ROS_tutorials/blob/810375a6239446005de0106ca017b2ac2094cbae/dwa_local_planner/param/waypoints.yaml) 을 생성한다. num_waypoints 는 waypoints의 수, waypoint_n은 각 waypoint의 [x(m), y(m)] 정보이다.
+이후 [waypoints.yaml](dwa_local_planner/param/waypoints.yaml) 을 생성한다. num_waypoints 는 waypoints의 수, waypoint_n은 각 waypoint의 [x(m), y(m)] 정보이다.
 
 ### 3) launch 파일 생성
 
@@ -111,7 +111,7 @@ mkdir launch
 cd launch
 ```
 
-이후 [dwa.launch.py](https://github.com/pby04188/ROS_tutorials/blob/810375a6239446005de0106ca017b2ac2094cbae/dwa_local_planner/launch/dwa.launch.py) 를 생성한다.
+이후 [dwa.launch.py](dwa_local_planner/launch/dwa.launch.py) 를 생성한다.
 
 ### 4) 빌드
 
@@ -127,4 +127,4 @@ colcon build --symlink-install --packages-select dwa_local_planner
 ros2 launch dwa_local_planner dwa.launch.py
 ```
 
-waypoints를 변경하고 싶으면 파라미터 파일 [waypoints.yaml](https://github.com/pby04188/ROS_tutorials/blob/810375a6239446005de0106ca017b2ac2094cbae/dwa_local_planner/param/waypoints.yaml) 을 다시 빌드하여 사용하면 된다.
+waypoints를 변경하고 싶으면 파라미터 파일 [waypoints.yaml](dwa_local_planner/param/waypoints.yaml) 을 다시 빌드하여 사용하면 된다.
