@@ -67,7 +67,7 @@ ros2 topic pub --once /rad_vel_dir msg_srv_action_interface/msg/RVD "{radius: 1.
 ## 실습2(오픈소스예제 ROS 패키지화)
 
 ### 개요
-<img src="https://user-images.githubusercontent.com/87575823/148650155-5136e71c-bf54-467d-a42f-dcae0c02712f.png" width="600" height="300"/>　　<img src="https://user-images.githubusercontent.com/87575823/148650680-43b41ad7-2557-4cbe-897f-ff26b024f48c.png" width="300" height="300"/>
+<img src="https://user-images.githubusercontent.com/87575823/148650155-5136e71c-bf54-467d-a42f-dcae0c02712f.png" width="400" height="200"/>　　<img src="https://user-images.githubusercontent.com/87575823/148650680-43b41ad7-2557-4cbe-897f-ff26b024f48c.png" width="200" height="200"/>
 
 turtlesim에서 turtle을 총 2마리(turtle1, turtle2) 생성한 후, turtle2가 turtle1과 부딪히지 않게 지정된 waypoints를 순환하는 dwa_local_planner 패키지를 설계하였다. 이 때, 기존의 turtle1에 추가된 turtle2는 "ros2 service call /spawn turtlesim/srv/Spawn" 명령어를 통하여 생성한다. rqt_graph와 같이 "/turtlesim_node" 에서 각 turtle의 위치 정보를 가지고 있는 "/turtle1/pose" 와 "/turtle2/pose" 를 발행하면 "/dwa_planner" 노드에서 구독한 뒤, turtle2의 경로, 속도를 계산하게 된다. 그리고 계산된 속도 정보를 가지고 있는 "/turtle2/cmd_vel" 를 "/turtlesim_node" 로 발행하여 turtle2를 움직이게 한다.
 
